@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Login!</h1>
+{% if err_msg %}
+  <h2> {{err_msg}} </h2>
+{% endif %}
+
+<div class="container">
+    <form method="POST" action="{% url 'create' %}" enctype="multipart/form-data" >
+      {% csrf_token %}
+      <input type="text" name="title" placeholder="title?"/><br>
+      <input type="textbox" name="body" placeholder="body?"/><br>
+      <input type="text" name="url" placeholder="url?"/><br>
+      ICON: <input type="file" name="icon"/><br>
+      IMAGE: <input type="file" name="image"/><br>
+      <input type="submit" value = "Add Product" class="btn btn-success btn-sm mt-2"/>
+    </form>
+</div>
+{% endblock %}

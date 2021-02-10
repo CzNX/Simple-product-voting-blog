@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for product in product %}
+        <div class="row">
+            <div class="col-2">
+                <img src="{{product.image.url}}" class="img-fluid">
+            </div>
+            <div class="col-6">
+               <a href="{% url 'detail' product.id%}"><h1>{{product.title}}</h1></a>
+                <p>{{product.summary}}</p>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    {% endfor %}
+{% endblock %}
